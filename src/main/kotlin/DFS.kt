@@ -1,6 +1,6 @@
 import Graph.Node
 
-private fun dfs(from: Node, to: Node, mutablePath: MutableList<Node>,
+private fun dfs(from: Node, to: Node?, mutablePath: MutableList<Node>,
                 visited: MutableSet<Node> = mutableSetOf()): Boolean {
     if (from === to)
         return true
@@ -20,4 +20,10 @@ fun dfs(from: Node, to: Node) = mutableListOf<Node>().let {
         it.apply { add(from) }.asReversed().toList()
     else
         null
+}
+
+fun paint(g: Graph): MutableList<Int> {
+    val colors = MutableList(g.nodes.size) { -1 }
+
+    return colors
 }
