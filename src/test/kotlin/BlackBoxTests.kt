@@ -100,9 +100,4 @@ class BlackBoxTests {
             }
         }
     }
-
-    @Test
-    fun intentionallyFailingTest() {
-        assertFalse(true)
-    }
 }
