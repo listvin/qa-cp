@@ -25,5 +25,15 @@ fun dfs(from: Node, to: Node) = mutableListOf<Node>().let {
 fun paint(g: Graph): MutableList<Int> {
     val colors = MutableList(g.nodes.size) { -1 }
 
+    var currentColor = 0
+    for (n in g.nodes) {
+        if (colors[n.id] == -1) {
+            val recentlyVisited = mutableSetOf<Node>()
+            dfs(n, null, mutableListOf(), recentlyVisited)
+            recentlyVisited.forEach { colors[it.id] = currentColor }
+            currentColor++
+        }
+    }
+
     return colors
 }
