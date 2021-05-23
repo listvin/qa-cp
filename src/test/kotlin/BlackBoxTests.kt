@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import Graph.Node
 import java.util.Random
+import kotlin.test.assertFalse
 
 class BlackBoxTests {
     @Test
@@ -98,5 +99,10 @@ class BlackBoxTests {
                 path?.assertIsPath(g[a], g[b])
             }
         }
+    }
+
+    @Test
+    fun intentionallyFailingTest() {
+        assertFalse(true)
     }
 }
