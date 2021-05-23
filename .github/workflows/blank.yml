@@ -33,5 +33,10 @@ jobs:
       - name: clean
         run: ./gradlew clean
 
-      - name: run all tests
-        run: ./gradlew test
+      - name: run dfs old tests
+        run: |
+          ./gradlew test --tests "BlackBoxTests"
+          ./gradlew test --tests "WhiteBoxTests"
+        
+      - name: run dfs whitebox tests
+        run: ./gradlew test --tests "PaintingTests"
