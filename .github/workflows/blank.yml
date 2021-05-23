@@ -36,7 +36,7 @@ jobs:
       - name: run dfs old tests
         run: |
           ./gradlew test --tests "BlackBoxTests"
-          ./gradlew test --tests "WhiteBoxTests"
+          ./gradlew test --tests "WhiteBoxTest"
         
       - name: run dfs whitebox tests
         run: ./gradlew test --tests "PaintingTests"
